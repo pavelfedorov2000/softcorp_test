@@ -1,0 +1,63 @@
+.container {
+    width: calc(var(--container-width) + var(--container-padding) * 2);
+    max-width: 100%;
+    @include padding-x(var(--container-padding));
+    margin: 0 auto;
+}
+
+.wrapper {
+    position: relative;
+    @include flex-column;
+    min-height: 100vh;
+
+    @include media('1024', max) {
+        overflow-x: hidden;
+    }
+}
+
+.page {
+    position: relative;
+    flex: 1 0 auto; // Footer at bottom
+}
+
+// 12-колоночная сетка на гридах (и не нужен никакой бутсрап)
+
+/* .grid-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--gap);
+}
+
+.span {
+    &-2 {
+        grid-column: span 2;
+    }
+
+    &-3 {
+        grid-column: span 3;
+    }
+
+    &-4 {
+        grid-column: span 4;
+    }
+
+    &-5 {
+        grid-column: span 5;
+    }
+
+    &-6 {
+        grid-column: span 6;
+    }
+
+    &-7 {
+        grid-column: span 7;
+    }
+
+    &-8 {
+        grid-column: span 8;
+    }
+
+    &-9 {
+        grid-column: span 9;
+    }
+} */

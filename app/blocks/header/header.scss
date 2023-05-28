@@ -1,0 +1,15 @@
+.header {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 30;
+	height: var(--header-height);
+	@include flex-center-y;
+	background-color: rgba(16, 16, 29, 0.9);
+	color: var(--white);
+
+	&__inner {
+		@include flex-center-between;
+	}
+}

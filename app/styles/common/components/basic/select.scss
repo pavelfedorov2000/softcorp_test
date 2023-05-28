@@ -1,0 +1,57 @@
+.select {
+	$this: &;
+
+	position: relative;
+
+	&__toggle {
+		@include flex-center-y;
+		cursor: pointer;
+
+		&::after {
+			content: "";
+			position: absolute;
+			transition: var(--transition) transform;
+		}
+
+		&[aria-expanded="true"] {
+			&::after {
+				transform: rotate(180deg);
+			}
+
+			&~#{$this} {
+				&__content {
+					@include show();
+				}
+			}
+		}
+	}
+
+	&__content {
+		position: absolute;
+		left: 0;
+		right: 0;
+		@include flex-column;
+		width: 100%;
+		transition: var(--transition) all;
+		z-index: 30;
+		background-color: var(--white);
+		@include hide();
+	}
+
+	&__input {
+		display: none;
+
+		&:checked+label {}
+	}
+
+	&__label {
+		@include flex-center-y;
+		width: 100%;
+		cursor: pointer;
+		overflow: hidden;
+
+		@media (any-hover: hover) {
+			&:hover {}
+		}
+	}
+}

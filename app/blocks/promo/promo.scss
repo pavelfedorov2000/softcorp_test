@@ -1,0 +1,61 @@
+.promo {
+	padding: calc(var(--header-height) + var(--section-padding)) 0 var(--section-padding);
+	min-height: 100vh;
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	// .promo__content
+
+	&__content {
+		@include row-grid(var(--gap-xxl));
+		max-width: rem(780);
+	}
+
+	// .promo__title
+
+	&__title {
+		@include font-size(48, 58);
+		font-weight: 700;
+	}
+
+	// .promo__text
+
+	&__text {}
+
+	// .promo__list-title
+
+	&__list-title {
+		margin-bottom: var(--offset-xs);
+		@include font-size(20, 24);
+		font-weight: 700;
+	}
+
+	// .promo__list
+
+	&__list {
+		@include row-grid(var(--offset-xxs));
+
+		li {
+			position: relative;
+			padding-left: rem(25);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: rem(25);
+				height: rem(22);
+				background-image: url(../images/icons/defis.svg);
+				@include bg(contain);
+			}
+		}
+	}
+
+	&__btn {
+		padding: var(--offset);
+		@include flex-center-x;
+		min-width: rem(183);
+		@include font-size(13, 16);
+	}
+}

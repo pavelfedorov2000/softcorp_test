@@ -1,0 +1,15 @@
+.menu {
+	$this: &;
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+	}
+
+	&__link {
+		padding: var(--offset-s);
+		@include font-size(13, 16);
+		text-transform: uppercase;
+	}
+}

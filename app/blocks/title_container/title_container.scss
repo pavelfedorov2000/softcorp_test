@@ -1,0 +1,5 @@
+.title-container {
+	@include row-grid(var(--gap));
+	justify-items: center;
+	text-align: center;
+}

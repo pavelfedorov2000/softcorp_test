@@ -1,0 +1,20 @@
+body {
+	min-width: 320px;
+	font-style: normal;
+	font-family: var(--main-font);
+	line-height: 1.5;
+	font-weight: 400;
+	color: var(--color-default);
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+	overflow-x: hidden;
+
+	&._lock {
+		overflow-y: hidden;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}

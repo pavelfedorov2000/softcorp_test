@@ -1,0 +1,24 @@
+html {
+	box-sizing: border-box;
+
+	/* scrollbar-color: rgb(var(--white), 0.3) transparent;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+    	width: rem(12);
+    	height: rem(12);
+    	background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+    	background-color: rgb(var(--white), 0.3);
+    	border-radius: rem(10);
+    } */
+
+	&.disable-fix {
+		@media (min-width: 1025px) {
+			padding-right: 17px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<form class="checkout-form">
+	@@include('blocks/select/select.html', {
+	"class": "checkout-form__select"
+	})
+	@@loop('blocks/field/field.html', [{
+	"class": "checkout-form__field checkout-form__field--email",
+	"name": "email",
+	"inputType": "email",
+	"placeholder": "Ваш e-mail",
+	}, {
+	"class": "checkout-form__field checkout-form__field--name",
+	"name": "name",
+	"placeholder": "Ваше имя",
+	}])
+	@@include('blocks/button/button.html', {
+	"class": "checkout-form__btn",
+	"inputType": "submit",
+	"primary": true,
+	"text": "Отправить"
+	})
+</form>

@@ -1,0 +1,22 @@
+.title {
+	font-family: var(--main-font);
+	text-transform: uppercase;
+
+	span {
+		color: var(--accent);
+	}
+}
+
+.subtitle {
+	@include font-size(18, 22);
+	color: var(--gray);
+}
+
+h1 {
+	@include font-size(48, 58);
+}
+
+h2 {
+	@include font-size(36, 43);
+	font-weight: 900;
+}

@@ -1,0 +1,12 @@
+@mixin scrollbar($scroll-width, $scroll-brs) {
+	overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: rem($scroll-width);
+		border-radius: scroll-$brs;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: scroll-$brs;
+	}
+}

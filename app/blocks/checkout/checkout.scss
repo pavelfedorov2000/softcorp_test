@@ -1,0 +1,12 @@
+.checkout {
+	padding: var(--section-padding_xl) 0 var(--section-padding_xxl);
+	background-image: url(../images/bg/checkout-bg.jg);
+	@include bg(cover);
+	background-color: var(--dark-2);
+	color: var(--white);
+
+	&__body {
+		@include row-grid(var(--gap-xxl));
+		justify-items: center;
+	}
+}

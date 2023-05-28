@@ -1,0 +1,34 @@
+<div class="promo" style="background-image: url(assets/images/bg/promo-bg.jpg);">
+	<div class="container">
+		<div class="promo__content">
+			<h1 class="title promo__title">
+				<span>Lorem ipsum</span> dolor sit amet&nbsp;consectetur <span>adipiscing</span>
+			</h1>
+			<div class="promo__text">
+				<div class="promo__list-title">
+					At vero eos et accusamus et iusto odio dignissimos ducimus!
+				</div>
+				<ul class="promo__list">
+					<li>Totam rem aperiam eaque ipsa</li>
+					<li>Sit voluptatem accusantium doloremque laudantium</li>
+					<li>Sed ut perspiciatis, unde omnis iste natus error</li>
+				</ul>
+			</div>
+			<div class="btns">
+				@@loop('blocks/button/button.html', [{
+				"class": "promo__btn",
+				"primary": true,
+				"text": "Заказать",
+				"data": {
+				"attr": "section"
+				}
+				}, {
+				"href": "#",
+				"class": "promo__btn",
+				"style": "border",
+				"text": "Подробнее",
+				}])
+			</div>
+		</div>
+	</div>
+</div>

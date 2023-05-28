@@ -1,0 +1,41 @@
+.checkout-form {
+	display: grid;
+	gap: var(--gap);
+
+	@include media('768', min) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-areas:
+			'select email name'
+			'range range file'
+			'. submit .'
+		;
+	}
+
+	&__select {
+		@include media('768', min) {
+			grid-area: select;
+		}
+	}
+
+	&__field {
+		&--email {
+			@include media('768', min) {
+				grid-area: email;
+			}
+		}
+
+		&--name {
+			@include media('768', min) {
+				grid-area: name;
+			}
+		}
+
+		&--file {
+			grid-area: file;
+		}
+	}
+
+	&__btn {
+		grid-area: btn;
+	}
+}
