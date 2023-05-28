@@ -1,12 +1,18 @@
-<label class="field@@if(context.class){ @@class}">
-	<span class="form-label">@@label@@if(context.required){*}</span>
+<label @@if(context.class){class="@@class"}>
 	@@if(context.textarea){
 	<textarea class="input" @@if(context.placeholder){placeholder="@@placeholder" }></textarea>
 	}
 	@@if(!context.textarea){
-	<input @@if(context.inputType !='file' ){class="input" } @@if(context.inputType){type="@@inputType" }
-		@@if(context.placeholder){placeholder="@@placeholder" } @@if(context.required){required
-		data-pristine-required-message="@@requiredMessage" }
-		@@if(context.emailMessage){data-pristine-email-message="@@emailMessage" }>
+	<input @@if(context.id){id="@@id"} @@if(context.inputType !='file' ){class="field" } @@if(context.inputType){type="@@inputType" } @@if(context.name){name="@@name"}
+		@@if(context.placeholder){placeholder="@@placeholder" } @@if(context.required){required}>
 	}
+
+    @@if(context.inputType =='file' ) {
+        <span class="btn checkout-form__file-upload btn--style_border-accent">
+            @@include('blocks/icons/file.html', {
+                "class": "btn__icon"
+            })
+            <span class="btn__text">@@label</span>
+        </span>
+    }
 </label>

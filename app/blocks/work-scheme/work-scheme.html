@@ -1,3 +1,62 @@
-<div class="work-scheme@@if(context.class){ @@class}@@if(context.style){ work-scheme--style_@@style}">
-  <!--your code-->
-</div>
+<ol class="work-scheme@@if(context.class){ @@class}">
+    <li class="work-scheme__item animated">
+        <span class="work-scheme__item-img">
+            @@include('blocks/sprite/sprite.html', {
+                "icon": "search"
+            })
+        </span>
+        @@include('blocks/title/title.html', {
+            "tag": "span",
+            "class": "work-scheme__item-title",
+            "text": "Lorem ipsum dolor sit amet"
+        })
+    </li>
+    <li class="work-scheme__item animated">
+        <span class="work-scheme__item-img">
+            @@include('blocks/sprite/sprite.html', {
+                "icon": "percent"
+            })
+        </span>
+        @@include('blocks/title/title.html', {
+            "tag": "span",
+            "class": "work-scheme__item-title",
+            "text": "Сonsecteturadipiscing elit"
+        })
+    </li>
+    <li class="work-scheme__item animated">
+        <span class="work-scheme__item-img">
+            @@include('blocks/sprite/sprite.html', {
+                "icon": "document"
+            })
+        </span>
+        @@include('blocks/title/title.html', {
+            "tag": "span",
+            "class": "work-scheme__item-title",
+            "text": "Sed do eiusmod tempor"
+        })
+    </li>
+    <li class="work-scheme__item animated">
+        <span class="work-scheme__item-img">
+            @@include('blocks/sprite/sprite.html', {
+                "icon": "envelope"
+            })
+        </span>
+        @@include('blocks/title/title.html', {
+            "tag": "span",
+            "class": "work-scheme__item-title",
+            "text": "Esse cillum dolore eu fugiat"
+        })
+    </li>
+    <li class="work-scheme__item animated">
+        <span class="work-scheme__item-img">
+            @@include('blocks/sprite/sprite.html', {
+                "icon": "money"
+            })
+        </span>
+        @@include('blocks/title/title.html', {
+            "tag": "span",
+            "class": "work-scheme__item-title",
+            "text": "Excepteur sint occaecat cupidatat non proident"
+        })
+    </li>
+</ol>

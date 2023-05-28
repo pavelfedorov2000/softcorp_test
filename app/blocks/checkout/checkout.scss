@@ -1,6 +1,6 @@
 .checkout {
 	padding: var(--section-padding_xl) 0 var(--section-padding_xxl);
-	background-image: url(../images/bg/checkout-bg.jg);
+	background-image: url(../images/bg/checkout-bg.jpg);
 	@include bg(cover);
 	background-color: var(--dark-2);
 	color: var(--white);
@@ -9,4 +9,8 @@
 		@include row-grid(var(--gap-xxl));
 		justify-items: center;
 	}
+
+    &__form {
+        justify-self: stretch;
+    }
 }

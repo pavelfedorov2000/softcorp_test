@@ -1,12 +1,12 @@
 <div
 	class="title-container@@if(context.orientation){ title-container--orientation_@@orientation}@@if(context.class){ @@class}">
 	@@include('blocks/title/title.html', {
-	"class": "@@title.class",
-	"level": "@@title.level",
-	"text": "@@title.text"
+        "class": "@@title.class",
+        "level": "@@title.level",
+        "text": "@@title.text"
 	})
 
 	@@if(context.subtitle){
-	<div class="subtitle">@@subtitle</div>
+	    <div class="subtitle animated">@@subtitle</div>
 	}
 </div>

@@ -1,28 +1,32 @@
 <nav id="menu" class="menu@@if(context.class){ @@class}">
+    @@include('blocks/close-btn/close-btn.html', {
+        "class": "menu__close js-close-menu"
+    })
 	<ul class="menu__list">
 		@@loop('blocks/button/button.html', [{
-		"href": "#",
-		"listItem": true,
-		"class": "menu__link",
-		"text": "Бизнес",
+            "href": "#",
+            "listItem": true,
+            "class": "menu__link",
+            "text": "Бизнес",
 		}, {
-		"href": "#",
-		"listItem": true,
-		"class": "menu__link",
-		"text": "О нас",
+            "href": "#",
+            "listItem": true,
+            "class": "menu__link",
+            "text": "О нас",
 		}, {
-		"href": "#",
-		"listItem": true,
-		"class": "menu__link",
-		"text": "Цены",
+            "href": "#",
+            "listItem": true,
+            "class": "menu__link",
+            "text": "Цены",
 		}, {
-		"href": "#",
-		"listItem": true,
-		"class": "menu__link",
-		"text": "Оформить заказ",
-		"data": {
-		"attr": "section"
-		}
+            "href": "#",
+            "listItem": true,
+            "class": "menu__link",
+            "text": "Оформить заказ",
+            "data": {
+                "attr": "section",
+                "value": "checkout"
+            }
 		}])
 	</ul>
 </nav>

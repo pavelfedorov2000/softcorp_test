@@ -1,5 +1,6 @@
-@mixin round($size) {
+@mixin round($size, $bg) {
 	width: $size;
 	height: $size;
 	border-radius: 50%;
+    background-color: $bg;
 }

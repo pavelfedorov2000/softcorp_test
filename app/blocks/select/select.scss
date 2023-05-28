@@ -1,3 +1,94 @@
 .select {
-  // your code
+	$this: &;
+
+	position: relative;
+    border-radius: var(--brs-field);
+
+	&__toggle {
+		@include flex-center-between;
+		cursor: pointer;
+        text-align: left;
+        transition: var(--transition300ms) background-color, var(--transition300ms) color, var(--transition300ms) border-width,  var(--transition300ms) border-color;
+
+		&-arrow {
+            fill: var(--black);
+			transition: var(--transition300ms) transform, var(--transition300ms) fill;
+		}
+
+		&[aria-expanded="true"] {
+            background-color: rgb(var(--dark-gray-rgb));
+            border-color: rgb(var(--dark-gray-rgb));
+            color: var(--white);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+
+            #{$this} {
+                &__toggle-arrow {
+                    fill: var(--white);
+                    transform: rotate(180deg);
+                }
+            }
+
+			&~#{$this} {
+				&__dropdown {
+					@include show();
+				}
+			}
+		}
+	}
+
+	&__dropdown {
+		position: absolute;
+		left: 0;
+		right: 0;
+        padding: rem(2) rem(4);
+        background-color: var(--dark-2);
+        border: 1px solid rgb(var(--dark-gray-rgb));
+		transition: var(--transition300ms) all;
+		z-index: 25;
+		@include hide();
+	}
+
+    &__content {
+        padding: 0 var(--offset) 0 var(--offset-xxs);
+        height: rem(174);
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--dark-gray-rgb));
+
+        &::-webkit-scrollbar {
+            width: rem(7);
+            background: rgb(var(--dark-gray-rgb));
+            border-radius: var(--brs-field);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: var(--brs-field);
+        }
+    }
+
+	&__input {
+		display: none;
+
+		&:checked+label {
+            color: var(--blue);
+        }
+	}
+
+	&__label {
+		@include flex-center-y;
+		width: 100%;
+		cursor: pointer;
+		overflow: hidden;
+        @include font-size(18, 34);
+        color: var(--white);
+        transition: var(--transition300ms) color;
+
+		@media (any-hover: hover) {
+			&:hover {
+                color: #42A9ED;
+            }
+		}
+	}
 }

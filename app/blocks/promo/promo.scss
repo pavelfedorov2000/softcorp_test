@@ -1,9 +1,18 @@
 .promo {
 	padding: calc(var(--header-height) + var(--section-padding)) 0 var(--section-padding);
-	min-height: 100vh;
 	background-position: center top;
 	background-size: cover;
 	background-repeat: no-repeat;
+
+    @include media('767', max) {
+        padding-top: calc(var(--header-height) + var(--gap));
+        background-position-x: 60%;
+    }
+
+    @include media('768', min) {
+        min-height: 100vh;
+    }
+
 	// .promo__content
 
 	&__content {
@@ -16,17 +25,24 @@
 	&__title {
 		@include font-size(48, 58);
 		font-weight: 700;
+
+        @include media('767', max) {
+            font-size: rem(28);
+        }
 	}
 
-	// .promo__text
+    &__text {
+        @include font-size(20, 24);
 
-	&__text {}
+        @include media('767', max) {
+            font-size: rem(16);
+        }
+    }
 
 	// .promo__list-title
 
 	&__list-title {
 		margin-bottom: var(--offset-xs);
-		@include font-size(20, 24);
 		font-weight: 700;
 	}
 
@@ -52,10 +68,20 @@
 		}
 	}
 
+    &__btns {
+        @include media('767', max) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
 	&__btn {
 		padding: var(--offset);
 		@include flex-center-x;
-		min-width: rem(183);
 		@include font-size(13, 16);
+
+        @include media('768', min) {
+            min-width: rem(183);
+        }
 	}
 }

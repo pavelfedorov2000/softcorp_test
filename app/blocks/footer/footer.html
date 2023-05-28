@@ -1,8 +1,25 @@
 <footer class="footer">
 	<div class="container">
 		<div class="footer__inner">
-			<p class="footer__copyright"></p>
-			@@include('blocks/payment/payment.html')
+			@@include('blocks/payment/payment.html', {
+                "class": "footer__payment"
+            })
+            <div class="btns footer__contacts">
+                @@loop('blocks/button/button.html', [{
+                    "href": "mailto:info@ipsum228.com",
+                    "class": "footer__contact",
+                    "sprite": "email",
+                    "text": "info@ipsum228.com"
+                }, {
+                    "href": "#",
+                    "class": "footer__contact",
+                    "sprite": "vk",
+                    "text": "Мы вконтакте"
+                }])
+            </div>
+            <p class="footer__copyright">
+                &copy; 2018 «LoremIpsum.net» Все права защищены.
+            </p>
 		</div>
 	</div>
 </footer>

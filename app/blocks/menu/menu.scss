@@ -5,6 +5,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: var(--gap);
+
+        @include media('767', max) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
 	}
 
 	&__link {
@@ -12,4 +17,12 @@
 		@include font-size(13, 16);
 		text-transform: uppercase;
 	}
+
+    &__close {
+        display: none;
+
+        @include media ('767', max) {
+            display: block;
+        }
+    }
 }

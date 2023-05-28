@@ -1,24 +1,19 @@
 html {
 	box-sizing: border-box;
 
-	/* scrollbar-color: rgb(var(--white), 0.3) transparent;
+	scrollbar-color: var(--accent);
     scrollbar-width: thin;
     scroll-behavior: smooth;
 
     &::-webkit-scrollbar {
-    	width: rem(12);
-    	height: rem(12);
-    	background-color: transparent;
+    	width: rem(7);
+    	height: rem(7);
+        background-color: var(--dark-gray);
+    	border-radius: var(--brs-btn);
     }
 
     &::-webkit-scrollbar-thumb {
-    	background-color: rgb(var(--white), 0.3);
-    	border-radius: rem(10);
-    } */
-
-	&.disable-fix {
-		@media (min-width: 1025px) {
-			padding-right: 17px;
-		}
-	}
+    	background-color: var(--accent);
+    	border-radius: var(--brs-btn);
+    }
 }

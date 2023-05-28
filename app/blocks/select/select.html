@@ -1,37 +1,44 @@
 <div class="select@@if(context.class){ @@class}@@if(context.style){ select--style_@@style}">
-	<div class="select__toggle">Выберите тип системы</div>
-	<div class="select__content">
-		<input id="systepType0" class="select__input" type="radio" name="system_type" checked />
-		<label for="systepType0" tabindex="0" class="select__label" data-value="Sed ut perspiciatis">
-			Sed ut perspiciatis
-		</label>
-		<input id="systepType1" class="select__input" type="radio" name="system_type" />
-		<label for="systepType1" tabindex="0" class="select__label" data-value="Nemo enim ipsam">
-			Nemo enim ipsam
-		</label>
-		<input id="systepType2" class="select__input" type="radio" name="system_type" />
-		<label for="systepType2" tabindex="0" class="select__label" data-value="Et harum quidem">
-			Et harum quidem
-		</label>
-		<input id="systepType3" class="select__input" type="radio" name="system_type" />
-		<label for="systepType3" tabindex="0" class="select__label" data-value="Temporibus autem">
-			Temporibus autem
-		</label>
-		<input id="systepType4" class="select__input" type="radio" name="system_type" />
-		<label for="systepType4" tabindex="0" class="select__label" data-value="Itaque earum rerum">
-			Itaque earum rerum
-		</label>
-		<input id="systepType5" class="select__input" type="radio" name="system_type" />
-		<label for="systepType5" tabindex="0" class="select__label" data-value="Nemo enim ipsam">
-			Nemo enim ipsam
-		</label>
-		<input id="systepType6" class="select__input" type="radio" name="system_type" />
-		<label for="systepType6" tabindex="0" class="select__label" data-value="Et harum quidem">
-			Et harum quidem
-		</label>
-		<input id="systepType7" class="select__input" type="radio" name="system_type" />
-		<label for="systepType7" tabindex="0" class="select__label" data-value="Temporibus autem">
-			Temporibus autem
-		</label>
+	<button class="field select__toggle" aria-controls="system-type" aria-expanded="false" type="button">
+        <span class="select__toggle-text">Выберите тип системы</span>
+        @@include('blocks/icons/drop.html', {
+            "class": "select__toggle-arrow"
+        })
+    </button>
+	<div id="system-type" class="select__dropdown">
+		<div class="select__content">
+            <input id="systemType0" class="select__input" type="radio" name="system_type" checked />
+            <label for="systemType0" tabindex="0" class="select__label" data-value="Sed ut perspiciatis">
+                Sed ut perspiciatis
+            </label>
+            <input id="systemType1" class="select__input" type="radio" name="system_type" />
+            <label for="systemType1" tabindex="0" class="select__label" data-value="Nemo enim ipsam">
+                Nemo enim ipsam
+            </label>
+            <input id="systemType2" class="select__input" type="radio" name="system_type" />
+            <label for="systemType2" tabindex="0" class="select__label" data-value="Et harum quidem">
+                Et harum quidem
+            </label>
+            <input id="systemType3" class="select__input" type="radio" name="system_type" />
+            <label for="systemType3" tabindex="0" class="select__label" data-value="Temporibus autem">
+                Temporibus autem
+            </label>
+            <input id="systemType4" class="select__input" type="radio" name="system_type" />
+            <label for="systemType4" tabindex="0" class="select__label" data-value="Itaque earum rerum">
+                Itaque earum rerum
+            </label>
+            <input id="systemType5" class="select__input" type="radio" name="system_type" />
+            <label for="systemType5" tabindex="0" class="select__label" data-value="Nemo enim ipsam">
+                Nemo enim ipsam
+            </label>
+            <input id="systemType6" class="select__input" type="radio" name="system_type" />
+            <label for="systemType6" tabindex="0" class="select__label" data-value="Et harum quidem">
+                Et harum quidem
+            </label>
+            <input id="systemType7" class="select__input" type="radio" name="system_type" />
+            <label for="systemType7" tabindex="0" class="select__label" data-value="Temporibus autem">
+                Temporibus autem
+            </label>
+        </div>
 	</div>
 </div>

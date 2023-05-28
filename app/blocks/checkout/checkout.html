@@ -1,16 +1,18 @@
-<section class="checkout">
+<section id="checkout" class="checkout">
 	<div class="container">
 		<div class="checkout__body">
 			@@include('blocks/title_container/title_container.html', {
-			"title": {
-			"class": "title",
-			"level": "2",
-			"text": "Оформление Заказа"
-			},
-			"subtitle": "Перед заполнением формы ознакомьтесь с нашей схемой работы!"
+                "title": {
+                    "class": "title animated",
+                    "level": "2",
+                    "text": "Оформление <span>Заказа</span>"
+                },
+                "subtitle": "Перед заполнением формы ознакомьтесь с нашей схемой работы!"
 			})
 			@@include('blocks/work-scheme/work-scheme.html')
-			@@include('blocks/checkout-form/checkout-form.html')
+			@@include('blocks/checkout-form/checkout-form.html', {
+                "class": "checkout__form"
+            })
 		</div>
 	</div>
 </section>

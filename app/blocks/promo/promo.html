@@ -14,19 +14,20 @@
 					<li>Sed ut perspiciatis, unde omnis iste natus error</li>
 				</ul>
 			</div>
-			<div class="btns">
+			<div class="btns promo__btns">
 				@@loop('blocks/button/button.html', [{
-				"class": "promo__btn",
-				"primary": true,
-				"text": "Заказать",
-				"data": {
-				"attr": "section"
-				}
+                    "class": "promo__btn",
+                    "primary": true,
+                    "text": "Заказать",
+                    "data": {
+                        "attr": "section",
+                        "value": "checkout"
+                    }
 				}, {
-				"href": "#",
-				"class": "promo__btn",
-				"style": "border",
-				"text": "Подробнее",
+                    "href": "#",
+                    "class": "promo__btn",
+                    "style": "border",
+                    "text": "Подробнее"
 				}])
 			</div>
 		</div>

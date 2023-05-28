@@ -1,7 +1,19 @@
 .burger-btn {
     display: none;
+    width: rem(30);
+    height: rem(27);
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
 
-    @include media('1024', max) {
+    span {
+        width: 100%;
+        height: rem(3);
+        background-color: var(--white);
+    }
+
+    @include media('767', max) {
         display: flex;
     }
 }

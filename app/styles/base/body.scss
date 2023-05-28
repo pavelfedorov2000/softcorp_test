@@ -18,3 +18,18 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+.animated {
+    @include media('1101', min) {
+        transform: translateY(var(--gap-xl));
+        opacity: 0;
+        transition: var(--transition1s) transform, var(--transition1s) opacity;
+    }
+
+    &.in-view {
+        @include media('1101', min) {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

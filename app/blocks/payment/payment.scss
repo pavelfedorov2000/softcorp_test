@@ -1,3 +1,19 @@
 .payment {
-  // your code
+    display: flex;
+    gap: var(--gap);
+
+    &__item {
+        @include flex-center-y;
+    }
+
+    &__item-icon {
+        flex-shrink: 0;
+        margin-right: var(--offset-xs);
+    }
+
+    &__item-text {
+        @include font-size(13, 16);
+        color: var(--gray);
+        white-space: nowrap;
+    }
 }

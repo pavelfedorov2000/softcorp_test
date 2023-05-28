@@ -1,4 +1,4 @@
-<form class="checkout-form">
+<form class="checkout-form@@if(context.class){ @@class}">
 	@@include('blocks/select/select.html', {
 	"class": "checkout-form__select"
 	})
@@ -12,9 +12,22 @@
 	"name": "name",
 	"placeholder": "Ваше имя",
 	}])
+    <div class="checkout-form__range range">
+        <div class="range__top">
+            <label for="range-slider" class="range__label">Sed ut perspiciatis, unde omnis iste natus</label>
+            <span class="range__value"></span>
+        </div>
+        <div id="range-slider"></div>
+    </div>
+    @@include('blocks/field/field.html', {
+        "class": "checkout-form__file",
+        "id": "file",
+        "inputType": "file",
+        "label": "Прикрепить файл"
+    })
 	@@include('blocks/button/button.html', {
-	"class": "checkout-form__btn",
-	"inputType": "submit",
+	"class": "checkout-form__btn animated",
+	"type": "submit",
 	"primary": true,
 	"text": "Отправить"
 	})

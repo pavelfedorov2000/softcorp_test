@@ -1,5 +1,35 @@
 <ul class="payment@@if(context.class){ @@class}">
 	<li class="payment__item">
-
+        @@include('blocks/img/img.html', {
+            "class": "payment__item-icon",
+            "picture": "false",
+            "src": "assets/images/icons/qiwi",
+            "width": "20",
+            "height": "20",
+            "alt": "qiwi"
+        })
+        <span class="payment__item-text">Qiwi wallet</span>
+	</li>
+    <li class="payment__item">
+        @@include('blocks/img/img.html', {
+            "class": "payment__item-icon",
+            "picture": "false",
+            "src": "assets/images/icons/yandex",
+            "width": "20",
+            "height": "20",
+            "alt": "yandex money"
+        })
+        <span class="payment__item-text">Yandex Money</span>
+	</li>
+    <li class="payment__item">
+        @@include('blocks/img/img.html', {
+            "class": "payment__item-icon",
+            "picture": "false",
+            "src": "assets/images/icons/web-money",
+            "width": "20",
+            "height": "20",
+            "alt": "web money"
+        })
+        <span class="payment__item-text">Web Money</span>
 	</li>
 </ul>

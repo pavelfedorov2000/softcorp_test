@@ -4,8 +4,9 @@
 	cursor: pointer;
 	padding: 0;
 	border: none;
+    background-color: transparent;
 	font-family: var(--main-font);
-	transition: color var(--transition300ms), background-color var(--transition300ms);
+	transition: var(--transition300ms) color, var(--transition300ms) background-color, var(--transition1s) transform, var(--transition1s) opacity;
 	color: currentColor;
 
 	@media (any-hover: hover) {
@@ -31,22 +32,59 @@
 	.icon,
 	&__icon {
 		flex-shrink: 0;
+        margin-right: var(--offset-xs);
 	}
 
 	&--style {
-		&_border {
+		&_border,
+        &_border-accent {
+            @include flex-center;
+            border-style: solid;
 			background-color: var(--white);
-			border: 1px solid var(--gray-border);
 			border-radius: var(--brs-btn);
 			text-transform: uppercase;
+            color: var(--dark-2);
+
+            #{$this} {
+                &__icon {
+                    fill: var(--dark-2);
+                }
+            }
 
 			@media (any-hover: hover) {
 				&:hover {
-					background-color: var(--gray-border);
 					color: var(--white);
+
+                    #{$this} {
+                        &__icon {
+                            fill: var(--white);
+                        }
+                    }
 				}
 			}
 		}
+
+        &_border {
+            border-width: 1px;
+            border-color: var(--gray-border);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: var(--gray-border);
+                }
+            }
+        }
+
+        &_border-accent {
+            border-width: 2px;
+            border-color: var(--accent);
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: var(--accent);
+                }
+            }
+        }
 	}
 
 	&--primary {
@@ -69,4 +107,16 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--gap);
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--gap);
+    border: none;
+    background: transparent;
+    font-size: rem(45);
+    line-height: 58%;
+    color: var(--white);
 }

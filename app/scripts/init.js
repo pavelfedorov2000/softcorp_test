@@ -1,21 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('[data-section]').forEach((link) => {
-        link.addEventListener('click', () => {
+    app.menu.init();
+    app.select.init();
+
+    const scrollBtns = document.querySelectorAll('[data-section]');
+
+    if (!scrollBtns.length) return;
+
+    scrollBtns.forEach((link) => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+
             window.scrollTo({
                 top: document.querySelector(`#${link.getAttribute('data-section')}`).offsetTop,
                 behavior: "smooth"
             });
+
+            const menu = link.closest('.header__menu');
+
+            if (!menu || !menu.classList.contains('active')) return;
+
+            document.querySelector('body').classList.remove('_lock');
+            menu.classList.remove('active');
         });
     });
 
-    /* $('input[type="file"]').on('change', function () {
-        const $input = $(this);
-        const fileName = this.files[0].name;
-        const $placeholder = $input.closest('label').find('.placeholder');
-        $placeholder.text(fileName);
-    }); */
+    const fileInputs = document.querySelectorAll('input[type="file"]');
 
-    /* const animatedItems = document.querySelectorAll('.animated');
+    if (!fileInputs.length) return;
+
+    fileInputs.forEach((input) => {
+        input.addEventListener('change', function() {
+            const label = input.closest('label').querySelector('.btn__text');
+            const fileName = this.files[0].name;
+            label.textContent = fileName;
+        });
+    });
+
+    const animatedItems = document.querySelectorAll('.animated');
+
+    if (!animatedItems.length) return;
 
     const callback = (entries, observer) => {
         entries.forEach((entry) => {
@@ -29,38 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const options = {
-        // root: по умолчанию window, но можно задать любой элемент-контейнер
         rootMargin: '0px 0px 75px 0px',
         threshold: 0,
     };
 
     const observer = new IntersectionObserver(callback, options);
 
-    animatedItems.forEach((item) => observer.observe(item)); */
+    animatedItems.forEach((item) => observer.observe(item));
 
-    // Custom js select
-    let selectItem = document.querySelector('.select');
-    let selectToggle = selectItem.querySelector('.select__toggle');
-    let selectLabels = selectItem.querySelectorAll('.select__label');
+    const rangeSlider = document.getElementById('range-slider');
 
-    selectToggle.addEventListener('click', () => {
-        if ('active' === selectItem.getAttribute('data-state')) {
-            selectItem.setAttribute('data-state', '');
-        } else {
-            selectItem.setAttribute('data-state', 'active');
+    if (!rangeSlider) return;
+
+    noUiSlider.create(rangeSlider, {
+        start: [75],
+        range: {
+            'min': [0],
+            'max': [100]
         }
     });
 
-    selectLabels.forEach((label) => {
-        label.addEventListener('click', (e) => {
-            selectToggle.textContent = e.target.textContent;
-            selectItem.setAttribute('data-state', '');
-        });
-    });
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        const rangeValue = rangeSlider.closest('.range').querySelector('.range__value');
 
-    /* document.addEventListener('mouseup', (e) => {
-        if (searchForm != e.target && searchInput != e.target) {
-            searchForm.classList.remove('search-form--active');
-        }
-    }); */
+        if (!rangeValue) return;
+        
+        rangeValue.innerHTML = `${Math.floor(values[handle])}%`;
+    });
 });

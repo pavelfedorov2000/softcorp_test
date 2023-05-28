@@ -1,1 +1,83 @@
+.footer {
+    @include padding-y(var(--gap));
+    background-color: var(--dark-gray);
+    color: var(--white);
+    // .footer__inner
+
+    &__inner {
+        display: grid;
+
+        @include media('1100', max) {
+            gap: var(--gap);
+        }
+
+        @include media('768', min) {
+            grid-template-columns: repeat(2, minmax(max-content, 1fr));
+            grid-template-areas:
+            'pay contacts'
+            'copy copy';
+            align-items: center;
+        }
+
+        @include media('1101', min) {
+            grid-template-columns: repeat(3, minmax(max-content, 1fr));
+            grid-template-areas: 'copy pay contacts';
+        }
+    }
+
+    // .footer__copyright
+
+    &__copyright {
+        @include font-size(13, 16);
+
+        @include media('768', min) {
+            grid-area: copy;
+        }
+    }
+
+    &__payment {
+        @include media('768', min) {
+            grid-area: pay;
+        }
+
+        @include media('1101', min) {
+            @include padding-x(rem(40));
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                @include position-center-y;
+                width: 1px;
+                height: rem(18);
+                background-color: var(--gray);
+            }
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                right: 0;
+            }
+        }
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        @include media('768', min) {
+            grid-area: contacts;
+        }
+
+        @include media('1101', min) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__contact {
+        @include flex-center-y;
+        @include font-size(13, 16);
+    }
+}
 

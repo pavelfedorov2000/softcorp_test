@@ -2,7 +2,21 @@
 	display: grid;
 	gap: var(--gap);
 
+    @include media('767', max) {
+        gap: var(--gap-xl);
+    }
+
 	@include media('768', min) {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-areas:
+			'select select select email email email'
+			'name name name file file file'
+            'range range range range range range'
+			'. . submit submit . .'
+		;
+	}
+
+    @include media('1101', min) {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-areas:
 			'select email name'
@@ -29,13 +43,32 @@
 				grid-area: name;
 			}
 		}
-
-		&--file {
-			grid-area: file;
-		}
 	}
 
+    &__file {
+        @include media('768', min) {
+            grid-area: file;
+        }
+
+        &-upload {
+            padding: var(--offset);
+            @include font-size(15, 18);
+        }
+    }
+
+    &__range {
+        @include media('768', min) {
+            grid-area: range;
+        }
+    }
+
 	&__btn {
-		grid-area: btn;
+        padding: var(--offset);
+        @include font-size(15, 22);
+
+		@include media('768', min) {
+            margin-top: rem(25);
+            grid-area: submit;
+        }
 	}
 }
