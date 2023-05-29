@@ -1,24 +1,22 @@
 <form class="checkout-form@@if(context.class){ @@class}">
 	@@include('blocks/select/select.html', {
-	"class": "checkout-form__select"
+	    "class": "checkout-form__select"
 	})
 	@@loop('blocks/field/field.html', [{
-	"class": "checkout-form__field checkout-form__field--email",
-	"name": "email",
-	"inputType": "email",
-	"placeholder": "Ваш e-mail",
+        "class": "checkout-form__field checkout-form__field--email",
+        "name": "email",
+        "inputType": "email",
+        "placeholder": "Ваш e-mail",
 	}, {
-	"class": "checkout-form__field checkout-form__field--name",
-	"name": "name",
-	"placeholder": "Ваше имя",
+        "class": "checkout-form__field checkout-form__field--name",
+        "name": "name",
+        "placeholder": "Ваше имя",
 	}])
-    <div class="checkout-form__range range">
-        <div class="range__top">
-            <label for="range-slider" class="range__label">Sed ut perspiciatis, unde omnis iste natus</label>
-            <span class="range__value"></span>
-        </div>
-        <div id="range-slider"></div>
-    </div>
+    @@include('blocks/range/range.html', {
+        "class": "checkout-form__range",
+        "id": "range-slider",
+        "label": "Sed ut perspiciatis, unde omnis iste natus"
+    })
     @@include('blocks/field/field.html', {
         "class": "checkout-form__file",
         "id": "file",
@@ -26,9 +24,9 @@
         "label": "Прикрепить файл"
     })
 	@@include('blocks/button/button.html', {
-	"class": "checkout-form__btn animated",
-	"type": "submit",
-	"primary": true,
-	"text": "Отправить"
+        "class": "checkout-form__btn animated",
+        "type": "submit",
+        "primary": true,
+        "text": "Отправить"
 	})
 </form>

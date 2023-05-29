@@ -7,10 +7,5 @@
 
 	&__body {
 		@include row-grid(var(--gap-xxl));
-		justify-items: center;
 	}
-
-    &__form {
-        justify-self: stretch;
-    }
 }

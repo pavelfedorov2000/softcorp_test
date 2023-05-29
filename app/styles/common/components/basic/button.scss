@@ -108,15 +108,3 @@
 	flex-wrap: wrap;
 	gap: var(--gap);
 }
-
-.close-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: var(--gap);
-    border: none;
-    background: transparent;
-    font-size: rem(45);
-    line-height: 58%;
-    color: var(--white);
-}

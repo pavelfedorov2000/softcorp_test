@@ -9,7 +9,7 @@
         background-position-x: 60%;
     }
 
-    @include media('768', min) {
+    @include media('1101', min) {
         min-height: 100vh;
     }
 
@@ -50,23 +50,23 @@
 
 	&__list {
 		@include row-grid(var(--offset-xxs));
-
-		li {
-			position: relative;
-			padding-left: rem(25);
-
-			&::before {
-				content: '';
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: rem(25);
-				height: rem(22);
-				background-image: url(../images/icons/defis.svg);
-				@include bg(contain);
-			}
-		}
 	}
+
+    &__list-item {
+        position: relative;
+		padding-left: rem(25);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: rem(25);
+			height: rem(22);
+			background-image: url(../images/icons/defis.svg);
+			@include bg(contain);
+		}
+    }
 
     &__btns {
         @include media('767', max) {

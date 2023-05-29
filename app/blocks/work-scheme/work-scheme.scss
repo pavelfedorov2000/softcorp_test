@@ -1,19 +1,27 @@
 .work-scheme {
-    width: 100%;
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(145), 1fr));
-    gap: var(--gap);
+    grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+    gap: var(--offset-m);
+    align-items: flex-start;
 
-    @include media('1101', min) {
+    @include media('768', min) {
+        position: relative;
+        gap: var(--gap);
+
         &::before {
             content: '';
             @include position-center-x;
-            top: rem(50);
+            top: rem(40);
             width: calc(830 / 1170 * 100%);
             height: rem(6);
             background-image: url(../images/dots-line.svg);
             @include bg(contain);
+        }
+    }
+
+    @include media('1101', min) {
+        &::before {
+            top: rem(50);
         }
     }
 
@@ -27,8 +35,13 @@
 	// .work-scheme__item-img
 	&__item-img {
         @include flex-center();
-        @include round(rem(100), var(--accent));
+        @include round(rem(80), var(--accent));
         border: rem(5) solid var(--dark-blue);
+
+        @include media('1101', min) {
+            width: rem(100);
+            height: rem(100);
+        }
 
         svg {
             width: rem(55);
@@ -39,8 +52,8 @@
     &__item-title {
         @include font-size(16, 19);
 
-        @include media('500', max) {
-            font-size: rem(14);
+        @include media('1101', max) {
+            font-size: rem(15);
         }
     }
 }
