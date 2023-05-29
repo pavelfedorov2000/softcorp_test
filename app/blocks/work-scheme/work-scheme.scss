@@ -25,15 +25,15 @@
         }
     }
 
-	// .work-scheme__item
-	&__item {
+    // .work-scheme__item
+    &__item {
         @include row-grid(var(--offset-m));
         justify-items: center;
         text-align: center;
-	}
+    }
 
-	// .work-scheme__item-img
-	&__item-img {
+    // .work-scheme__item-img
+    &__item-img {
         @include flex-center();
         @include round(rem(80), var(--accent));
         border: rem(5) solid var(--dark-blue);
@@ -44,10 +44,15 @@
         }
 
         svg {
-            width: rem(55);
-            height: rem(55);
+            width: rem(45);
+            height: rem(45);
+
+            @include media('1101', min) {
+                width: rem(55);
+                height: rem(55);
+            }
         }
-	}
+    }
 
     &__item-title {
         @include font-size(16, 19);
@@ -57,4 +62,3 @@
         }
     }
 }
-

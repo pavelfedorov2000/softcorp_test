@@ -1,48 +1,48 @@
 .btn {
-	$this: &;
+    $this: &;
 
-	cursor: pointer;
-	padding: 0;
-	border: none;
+    cursor: pointer;
+    padding: 0;
+    border: none;
     background-color: transparent;
-	font-family: var(--main-font);
-	transition: var(--transition300ms) color, var(--transition300ms) background-color, var(--transition1s) transform, var(--transition1s) opacity;
-	color: currentColor;
+    transition: var(--transition300ms) color, var(--transition300ms) background-color, var(--transition1s) transform, var(--transition1s) opacity;
+    color: currentColor;
 
-	@media (any-hover: hover) {
-		&:hover {
-			color: var(--accent);
-		}
-	}
+    @media (any-hover: hover) {
+        &:hover {
+            color: var(--accent);
+        }
+    }
 
-	&.disabled,
-	&[disabled] {
-		background-color: var(--gray-border);
-		color: var(--white);
-		cursor: not-allowed;
+    &.disabled,
+    &[disabled] {
+        background-color: var(--gray-border);
+        color: var(--white);
+        cursor: not-allowed;
 
-		@media (any-hover: hover) {
-			&:hover {
-				color: var(--white);
-			}
-		}
-	}
+        @media (any-hover: hover) {
+            &:hover {
+                color: var(--white);
+            }
+        }
+    }
 
-	svg,
-	.icon,
-	&__icon {
-		flex-shrink: 0;
+    svg,
+    .icon,
+    &__icon {
+        flex-shrink: 0;
         margin-right: var(--offset-xs);
-	}
+    }
 
-	&--style {
-		&_border,
+    &--style {
+
+        &_border,
         &_border-accent {
             @include flex-center;
             border-style: solid;
-			background-color: var(--white);
-			border-radius: var(--brs-btn);
-			text-transform: uppercase;
+            background-color: var(--white);
+            border-radius: var(--brs-btn);
+            text-transform: uppercase;
             color: var(--dark-2);
 
             #{$this} {
@@ -51,18 +51,18 @@
                 }
             }
 
-			@media (any-hover: hover) {
-				&:hover {
-					color: var(--white);
+            @media (any-hover: hover) {
+                &:hover {
+                    color: var(--white);
 
                     #{$this} {
                         &__icon {
                             fill: var(--white);
                         }
                     }
-				}
-			}
-		}
+                }
+            }
+        }
 
         &_border {
             border-width: 1px;
@@ -85,26 +85,26 @@
                 }
             }
         }
-	}
+    }
 
-	&--primary {
-		background-color: var(--accent);
-		color: var(--white);
-		border: 1px solid var(--white);
-		border-radius: var(--brs-btn);
-		text-transform: uppercase;
+    &--primary {
+        background-color: var(--accent);
+        color: var(--white);
+        border: 1px solid var(--white);
+        border-radius: var(--brs-btn);
+        text-transform: uppercase;
 
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: var(--dark-blue);
-				color: var(--white);
-			}
-		}
-	}
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--dark-blue);
+                color: var(--white);
+            }
+        }
+    }
 }
 
 .btns {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
 }

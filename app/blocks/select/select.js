@@ -31,7 +31,7 @@ app.select = {
         });
 
         document.addEventListener('mouseup', (e) => {
-            if (!e.target.classList.contains('.select__toggle')) {
+            if (!e.target.classList.contains('select__toggle') && !e.target.classList.contains('select__toggle-text') && !e.target.classList.contains('select__toggle-arrow')) {
                 const activeSelect = document.querySelector('[data-state="active"]');
 
                 if (!activeSelect) return;

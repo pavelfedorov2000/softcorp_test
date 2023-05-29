@@ -1,22 +1,24 @@
 .menu {
-	$this: &;
+    $this: &;
 
-	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--gap);
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
 
         @include media('767', max) {
             flex-direction: column;
             flex-wrap: nowrap;
+            gap: 0;
         }
-	}
+    }
 
-	&__link {
-		padding: var(--offset-s);
-		@include font-size(13, 16);
-		text-transform: uppercase;
-	}
+    &__link {
+        @include flex-center-y;
+        padding: var(--offset-s);
+        @include font-size(13, 16);
+        text-transform: uppercase;
+    }
 
     &__close {
         display: none;

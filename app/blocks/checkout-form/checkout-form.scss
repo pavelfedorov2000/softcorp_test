@@ -1,55 +1,50 @@
 .checkout-form {
-	display: grid;
-	gap: var(--gap);
+    $this: &;
+
+    display: grid;
+    gap: var(--gap);
 
     @include media('767', max) {
         gap: var(--gap-xl);
     }
 
-	@include media('768', min) {
-		grid-template-columns: repeat(6, 1fr);
-		grid-template-areas:
-			'select select select email email email'
-			'name name name file file file'
-            'range range range range range range'
-			'. . submit submit . .'
-		;
-	}
+    @include media('768', min) {
+        grid-template-columns: repeat(6, 1fr);
+    }
 
-    @include media('1101', min) {
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-areas:
-			'select email name'
-			'range range file'
-			'. submit .'
-		;
-	}
-
-	&__select {
-		@include media('768', min) {
-			grid-area: select;
-		}
-	}
-
-	&__field {
-		&--email {
-			@include media('768', min) {
-				grid-area: email;
-			}
-		}
-
-		&--name {
-			@include media('768', min) {
-				grid-area: name;
-			}
-		}
-	}
-
-    &__file {
+    &__field {
         @include media('768', min) {
-            grid-area: file;
+            grid-column: span 3;
         }
 
+        @include media('1101', min) {
+            grid-column: span 2;
+
+            & + #{$this}__btn {
+                &:nth-child(3n + 2) {
+                    grid-column: -3 / -1;
+                }
+
+                &:nth-child(3n) {
+                    grid-column: -3 / -1;
+                }
+
+                &:nth-child(3n + 3) {
+                    grid-column: 3 / 5;
+                }
+
+                &:nth-child(3n + 4) {
+                    grid-column: span 4;
+                }
+
+                &:nth-child(5) {
+                    grid-column: span 4;
+                }
+            }
+        }
+    }
+
+    &__file {
         &-upload {
             padding: var(--offset);
             @include font-size(15, 18);
@@ -58,17 +53,76 @@
 
     &__range {
         @include media('768', min) {
-            grid-area: range;
+            grid-column: span 3;
+        }
+
+        @include media('1101', min) {
+            grid-column: span 4;
+
+            &:nth-child(3n + 3) {
+                grid-column: span 2;
+            }
+
+            & + #{$this}__btn {
+
+                &:nth-child(3n + 2) {
+                    grid-column: -3 / -1;
+                }
+
+                &:nth-child(3n + 3),
+                &:nth-child(3n + 4) {
+                    grid-column: 3 / 5;
+                }
+
+                &:nth-child(3n + 3),
+                &:nth-child(4) {
+                    margin-top: rem(25);
+                }
+            }
+
+            & + #{$this}__field {
+                & + #{$this}__btn {
+                    &:nth-child(3n + 3) {
+                        grid-column: 3 / 5;
+                        margin-top: rem(25);
+                    }
+
+                    &:nth-child(3n + 4) {
+                        grid-column: span 4;
+                    }
+                }
+            }
         }
     }
 
-	&__btn {
+    > * {
+        & + #{$this}__btn {
+            &:nth-child(4) {
+                @include media('1101', min) {
+                    grid-column: 3 / 5;
+                }
+            }
+        }
+    }
+
+    &__btn {
         padding: var(--offset);
         @include font-size(15, 22);
 
-		@include media('768', min) {
-            margin-top: rem(25);
-            grid-area: submit;
+        @include media('768', min) {
+            grid-column: span 3;
+
+            &:nth-child(odd) {
+                grid-column: 2 / -2;
+            }
         }
-	}
+
+        @include media('1101', min) {
+            grid-column: unset;
+
+            &:nth-child(odd) {
+                grid-column: unset;
+            }
+        }
+    }
 }
