@@ -1,16 +1,30 @@
 .promo {
-    padding: calc(var(--header-height) + var(--section-padding)) 0 var(--section-padding);
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    @include media('767', max) {
-        padding-top: calc(var(--header-height) + var(--gap));
-        background-position-x: 60%;
-    }
+    display: grid;
 
     @include media('1101', min) {
         min-height: 100vh;
+    }
+
+    &__img,
+    &__body {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    &__body {
+        padding: calc(var(--header-height) + var(--section-padding)) 0 var(--section-padding);
+
+        @include media('767', max) {
+            padding-top: calc(var(--header-height) + var(--gap));
+        }
+    }
+
+    &__img {
+        img {
+            @include media('767', max) {
+               object-position: 60%;
+            }
+        }
     }
 
     // .promo__content

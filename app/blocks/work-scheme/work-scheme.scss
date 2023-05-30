@@ -1,23 +1,9 @@
 .work-scheme {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
-    gap: var(--offset-m);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--gap);
     align-items: flex-start;
-
-    @include media('768', min) {
-        position: relative;
-        gap: var(--gap);
-
-        &::before {
-            content: '';
-            @include position-center-x;
-            top: rem(40);
-            width: calc(830 / 1170 * 100%);
-            height: rem(6);
-            background-image: url(../images/dots-line.svg);
-            @include bg(contain);
-        }
-    }
 
     @include media('1101', min) {
         &::before {
@@ -27,30 +13,90 @@
 
     // .work-scheme__item
     &__item {
+        position: relative;
+        width: calc(50% - var(--gap) * 1 / 2);
         @include row-grid(var(--offset-m));
         justify-items: center;
         text-align: center;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: rem(50);
+            left: 85%;
+            width: 40%;
+            height: rem(6);
+            background-image: url(../images/dots.svg);
+            @include bg(contain);
+        }
+
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        @include media('500', max) {
+            &:nth-child(even) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        @include media('501', min) {
+            width: calc(33.3333% - var(--gap) * 2 / 3);
+        }
+
+        @media (min-width: 501px) and (max-width: 767px) {
+            &:nth-child(3n) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        @include media('768', min) {
+            width: calc(25% - var(--gap) * 3 / 4);
+
+            &::before {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1100px) {
+            &:nth-child(4n) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        @include media('1101', min) {
+            width: calc(20% - var(--gap) * 4 / 5);
+
+            &::before {
+                left: 80%;
+                width: rem(111);
+            }
+
+            &:nth-child(5n) {
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 
     // .work-scheme__item-img
     &__item-img {
         @include flex-center();
-        @include round(rem(80), var(--accent));
+        @include round(rem(100), var(--accent));
         border: rem(5) solid var(--dark-blue);
 
-        @include media('1101', min) {
-            width: rem(100);
-            height: rem(100);
-        }
-
         svg {
-            width: rem(45);
-            height: rem(45);
-
-            @include media('1101', min) {
-                width: rem(55);
-                height: rem(55);
-            }
+            width: rem(55);
+            height: rem(55);
         }
     }
 

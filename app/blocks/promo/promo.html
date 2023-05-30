@@ -1,36 +1,47 @@
-<div class="promo"
-     style="background-image: url(assets/images/bg/promo-bg.jpg);">
-    <div class="container">
-        <div class="promo__content">
-            <h1 class="title promo__title">
-                <span>Lorem ipsum</span> dolor sit amet&nbsp;consectetur <span>adipiscing</span>
-            </h1>
-            <div class="promo__text">
-                <div class="promo__list-title">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus!
+<div class="promo">
+    @@include('blocks/img/img.html', {
+        "class": "promo__img",
+        "cover": true,
+        "src": "assets/images/bg/promo-bg",
+        "width": "1920",
+        "height": "850",
+        "alt": "two men make business"
+    })
+    <div class="promo__body">
+        <div class="container">
+            <div class="promo__content">
+                <h1 class="title promo__title">
+                    <span>Lorem ipsum</span> dolor sit amet&nbsp;consectetur <span>adipiscing</span>
+                </h1>
+                <div class="promo__text">
+                    <div class="promo__list-title">
+                        At vero eos et accusamus et iusto odio dignissimos ducimus!
+                    </div>
+                    <ul class="promo__list">
+                        <li class="promo__list-item">Totam rem aperiam eaque ipsa</li>
+                        <li class="promo__list-item">Sit voluptatem accusantium doloremque laudantium</li>
+                        <li class="promo__list-item">Sed ut perspiciatis, unde omnis iste natus error</li>
+                    </ul>
                 </div>
-                <ul class="promo__list">
-                    <li class="promo__list-item">Totam rem aperiam eaque ipsa</li>
-                    <li class="promo__list-item">Sit voluptatem accusantium doloremque laudantium</li>
-                    <li class="promo__list-item">Sed ut perspiciatis, unde omnis iste natus error</li>
-                </ul>
-            </div>
-            <div class="btns promo__btns">
-                @@loop('blocks/button/button.html', [{
-                "class": "promo__btn",
-                "primary": true,
-                "text": "Заказать",
-                "data": {
-                "attr": "section",
-                "value": "checkout"
-                }
-                }, {
-                "href": "#",
-                "class": "promo__btn",
-                "style": "border",
-                "text": "Подробнее"
-                }])
+                <div class="btns promo__btns">
+                    @@loop('blocks/button/button.html', [{
+                        "class": "promo__btn",
+                        "primary": true,
+                        "text": "Заказать",
+                        "data": {
+                            "attr": "section",
+                            "value": "checkout"
+                        }
+                    }, {
+                    "href": "#",
+                        "class": "promo__btn",
+                        "style": "border",
+                        "text": "Подробнее"
+                    }])
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- style="background-image: url(assets/images/bg/promo-bg.jpg);" -->

@@ -1,7 +1,7 @@
 .checkout-form {
     $this: &;
 
-    display: grid;
+    @include flex-column;
     gap: var(--gap);
 
     @include media('767', max) {
@@ -9,38 +9,17 @@
     }
 
     @include media('768', min) {
-        grid-template-columns: repeat(6, 1fr);
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     &__field {
         @include media('768', min) {
-            grid-column: span 3;
+            flex: 0 0 calc(50% - var(--gap) / 2);
         }
 
         @include media('1101', min) {
-            grid-column: span 2;
-
-            & + #{$this}__btn {
-                &:nth-child(3n + 2) {
-                    grid-column: -3 / -1;
-                }
-
-                &:nth-child(3n) {
-                    grid-column: -3 / -1;
-                }
-
-                &:nth-child(3n + 3) {
-                    grid-column: 3 / 5;
-                }
-
-                &:nth-child(3n + 4) {
-                    grid-column: span 4;
-                }
-
-                &:nth-child(5) {
-                    grid-column: span 4;
-                }
-            }
+            flex: 1 0 calc(33.3333% - var(--gap) * 2 / 3);
         }
     }
 
@@ -53,55 +32,11 @@
 
     &__range {
         @include media('768', min) {
-            grid-column: span 3;
+            flex: 1 0 calc(50% - var(--gap) / 2);
         }
 
         @include media('1101', min) {
-            grid-column: span 4;
-
-            &:nth-child(3n + 3) {
-                grid-column: span 2;
-            }
-
-            & + #{$this}__btn {
-
-                &:nth-child(3n + 2) {
-                    grid-column: -3 / -1;
-                }
-
-                &:nth-child(3n + 3),
-                &:nth-child(3n + 4) {
-                    grid-column: 3 / 5;
-                }
-
-                &:nth-child(3n + 3),
-                &:nth-child(4) {
-                    margin-top: rem(25);
-                }
-            }
-
-            & + #{$this}__field {
-                & + #{$this}__btn {
-                    &:nth-child(3n + 3) {
-                        grid-column: 3 / 5;
-                        margin-top: rem(25);
-                    }
-
-                    &:nth-child(3n + 4) {
-                        grid-column: span 4;
-                    }
-                }
-            }
-        }
-    }
-
-    > * {
-        & + #{$this}__btn {
-            &:nth-child(4) {
-                @include media('1101', min) {
-                    grid-column: 3 / 5;
-                }
-            }
+            flex-basis: calc(67.54% - var(--gap) * 2 / 3);
         }
     }
 
@@ -110,19 +45,12 @@
         @include font-size(15, 22);
 
         @include media('768', min) {
-            grid-column: span 3;
-
-            &:nth-child(odd) {
-                grid-column: 2 / -2;
-            }
+            flex: 1 0 calc(50% - var(--gap) / 2);
         }
 
         @include media('1101', min) {
-            grid-column: unset;
-
-            &:nth-child(odd) {
-                grid-column: unset;
-            }
+            flex: 0 0 calc(33.3333% - var(--gap) * 2 / 3);
+            @include margin-x(auto);
         }
     }
 }

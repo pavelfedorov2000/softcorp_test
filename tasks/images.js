@@ -8,7 +8,9 @@ export const images = (cb) => {
     gulp.src('app/images/**/*')
         .pipe(gulp.dest(`${config.dist}/assets/images/`))
         .pipe(gulpif(config.isProd && config.imagesOptimize, imagemin()))
-        .pipe(webp())
+        .pipe(webp({
+            quality: 70
+        }))
         .pipe(gulp.dest(`${config.dist}/assets/images/`));
     cb();
 };

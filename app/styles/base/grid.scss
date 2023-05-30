@@ -1,6 +1,6 @@
 .container {
-    width: calc(var(--container-width) + var(--container-padding) * 2);
-    max-width: 100%;
+    max-width: calc(var(--container-width) + var(--container-padding) * 2);
+    width: 100%;
     @include padding-x(var(--container-padding));
     margin: 0 auto;
 }
