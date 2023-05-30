@@ -566,7 +566,7 @@ h2 {
 }
 @media (min-width: 1101px) {
   .checkout-form__range {
-    flex-basis: calc(67.54% - var(--gap) * 2 / 3);
+    flex-basis: calc(67.52% - var(--gap) * 2 / 3);
   }
 }
 .checkout-form__btn {
